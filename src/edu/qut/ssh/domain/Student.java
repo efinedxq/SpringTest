@@ -1,9 +1,16 @@
 package edu.qut.ssh.domain;
 
+import javax.annotation.Resource;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Scope("prototype")
+@Component("student")
 public class Student {
    
 	private String studentName;
-    private String stuId;
+    private int stuId;
     
     public String getStudentName() {
 		return studentName;
@@ -11,10 +18,10 @@ public class Student {
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
-	public String getStuId() {
+	public int getStuId() {
 		return stuId;
 	}
-	public void setStuId(String stuId) {
+	public void setStuId(int stuId) {
 		this.stuId = stuId;
 	}
 }

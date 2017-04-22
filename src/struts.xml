@@ -5,13 +5,14 @@
 <!-- 指定Struts 2配置文件的根元素 -->
 <struts>
 	<!--指定全局国际化资源文件 -->
-	<constant name="struts.custom.il8n,resources" value="mess"></constant>
+	<constant name="struts.custom.il8n,resources" value="mess" />
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="true" />
+	<!-- 设置浏览器是否缓存静态内容。默认值为true(生产环境下使用),开发阶段最好关闭  --> 
+    <constant name="struts.serve.static.browserCache" value="false" /> 
 	<!-- 所有的Action 定义都应该放在package下 -->
-	<package name="lee" namespace="/" extends="struts-default">
+	<package name="springTest" namespace="/" extends="struts-default">
 		<action name="controller" class="edu.qut.ssh.controller.StudentController" method="findStudentById">
-			<interceptor-ref name="defaultStack" />
 			<result name="input">/WEB-INF/content/index.jsp</result>
 		</action>
 	</package>

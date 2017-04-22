@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<context:component-scan base-package="edu.qut.ssh">
+	</context:component-scan>
+
+	<!-- 定义数据源Bean，使用C3P0数据源实现，并注入数据源的必要信息 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close" p:driverClass="com.mysql.jdbc.Driver"
+		p:jdbcUrl="jdbc:mysql://localhost/springtestStudent" p:user="root"
+		p:password="root123" p:maxPoolSize="40" p:minPoolSize="2"
+		p:initialPoolSize="2" p:maxIdleTime="30" />
+
+	<!-- 定义一个业务逻辑组件，实现类为MyServiceImp -->
+
+	<!-- <bean id="controller" class="edu.qut.ssh.controller.StudentController" 
+		scope="prototype"> -->
+	<!-- <property name="studentService" ref="studentService"/> -->
+	<!-- </bean> -->
+	<!-- <bean id="student" class="edu.qut.ssh.domain.Student" scope="prototype"/> -->
+	<!-- <bean id="studentService" class="edu.qut.ssh.service.impl.StudentServiceImpl"> -->
+	<!-- <property name="studentDao" ref="studentDao"/> -->
+	<!-- </bean> -->
+	<!-- <bean id="studentDao" class="edu.qut.ssh.dao.impl.StudentDaoImpl"> -->
+	<!-- <property name="student" ref="student"/> -->
+	<!-- </bean> -->
+
+</beans>
+
