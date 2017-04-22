@@ -15,12 +15,15 @@ import edu.qut.ssh.service.StudentService;
 //spring注解
 @Scope("prototype")
 @Controller("controller")
+//struts注解
+@Namespace("/")
 public class StudentController extends ActionSupport{
 	@Resource(name="studentService")
 	private StudentService studentService;
 	private int stuId;
 	private Student student = null;
-	
+	//struts注解
+	@Action(value="controller",results={@Result(name="input",location="/WEB-INF/content/index.jsp")})
 	public String findStudentById(){
 	    student = studentService.findStudentById(stuId);
 		return INPUT;

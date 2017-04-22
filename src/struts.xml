@@ -7,13 +7,24 @@
 	<!--指定全局国际化资源文件 -->
 	<constant name="struts.custom.il8n,resources" value="mess" />
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+
+	<!-- struts注解需要定义一下三个 -->
+	<!-- 定义action的位置   进行扫描的根包，该包会被扫描成action -->
+	<constant name="struts.convention.action.packages" value="edu.qut.ssh.controller" />
+	<!-- 把以Controller结尾的类当成Action处理 -->
+	<constant name="struts.convention.action.suffix" value="Controller" />
+	<!-- 工厂选用spring -->
+	<constant name="struts.objectFactory" value="spring" />
+	
+	
 	<constant name="struts.devMode" value="true" />
-	<!-- 设置浏览器是否缓存静态内容。默认值为true(生产环境下使用),开发阶段最好关闭  --> 
-    <constant name="struts.serve.static.browserCache" value="false" /> 
+	<!-- 设置浏览器是否缓存静态内容。默认值为true(生产环境下使用),开发阶段最好关闭 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
 	<!-- 所有的Action 定义都应该放在package下 -->
-	<package name="springTest" namespace="/" extends="struts-default">
-		<action name="controller" class="edu.qut.ssh.controller.StudentController" method="findStudentById">
-			<result name="input">/WEB-INF/content/index.jsp</result>
-		</action>
-	</package>
+	<!-- <package name="springTest" namespace="/" extends="struts-default"> -->
+	<!-- <action name="controller" class="edu.qut.ssh.controller.StudentController" 
+		method="findStudentById"> -->
+	<!-- <result name="input">/WEB-INF/content/index.jsp</result> -->
+	<!-- </action> -->
+	<!-- </package> -->
 </struts>
