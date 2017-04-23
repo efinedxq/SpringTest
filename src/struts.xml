@@ -13,7 +13,7 @@
 	<constant name="struts.convention.action.packages" value="edu.qut.ssh.controller" />
 	<!-- 把以Controller结尾的类当成Action处理 -->
 	<constant name="struts.convention.action.suffix" value="Controller" />
-	<!-- 工厂选用spring -->
+	<!-- spring+struts是要写上，工厂选用spring -->
 	<constant name="struts.objectFactory" value="spring" />
 	
 	

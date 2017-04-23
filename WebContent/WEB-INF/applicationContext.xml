@@ -6,7 +6,7 @@
 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-	
+	<!-- 扫面该包以及子包，把添加注解的java类当成bean -->
 	<context:component-scan base-package="edu.qut.ssh">
 	</context:component-scan>
 
@@ -19,6 +19,7 @@
 
 	<!-- 定义一个业务逻辑组件，实现类为MyServiceImp -->
 
+    <!-- 用xml方式配置必须要写setter方法或者带参构造方法进行依赖注入。建议写setter -->
 	<!-- <bean id="controller" class="edu.qut.ssh.controller.StudentController" 
 		scope="prototype"> -->
 	<!-- <property name="studentService" ref="studentService"/> -->

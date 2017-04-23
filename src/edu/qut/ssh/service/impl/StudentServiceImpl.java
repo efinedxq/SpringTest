@@ -20,12 +20,4 @@ public class StudentServiceImpl implements StudentService{
 		// TODO Auto-generated method stub
 		return studentDao.findStudentById(stuId);
 	}
-	
-	public StudentDao getStudentDao() {
-		return studentDao;
-	}
-//
-//	public void setStudentDao(StudentDao studentDao) {
-//		this.studentDao = studentDao;
-//	}
 }

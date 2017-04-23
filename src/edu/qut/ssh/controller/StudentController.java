@@ -15,7 +15,7 @@ import edu.qut.ssh.service.StudentService;
 //spring注解
 @Scope("prototype")
 @Controller("controller")
-//struts注解
+//struts注解  不可省路径
 @Namespace("/")
 public class StudentController extends ActionSupport{
 	@Resource(name="studentService")
@@ -28,10 +28,10 @@ public class StudentController extends ActionSupport{
 	    student = studentService.findStudentById(stuId);
 		return INPUT;
 	}
-	
-	public StudentService getStudentService() {
-		return studentService;
-	}
+//  spring不用写get方法
+//	public StudentService getStudentService() {
+//		return studentService;
+//	}
 //  可以省略       因为属于Spring
 //	public void setStudentService(StudentService studentService) {
 //		this.studentService = studentService;

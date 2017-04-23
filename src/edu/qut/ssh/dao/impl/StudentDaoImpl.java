@@ -37,6 +37,7 @@ public class StudentDaoImpl implements StudentDao {
 		student = (Student) jt.query(sql, new Object[] {stuId}, new ResultSetExtractor() {
 
 			public Object extractData(ResultSet rs) throws SQLException, DataAccessException {
+
 				Student s = new Student();
 				while (rs.next()) {
 
@@ -50,13 +51,5 @@ public class StudentDaoImpl implements StudentDao {
 
 		return student;
 	}
-
-	public Student getStudent() {
-		return student;
-	}
-	
-	// public void setStudent(Student student) {
-	// this.student = student;
-	// }
 
 }
